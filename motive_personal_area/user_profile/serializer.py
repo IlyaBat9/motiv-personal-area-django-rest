@@ -8,7 +8,7 @@ class UserBaseInfoSerializer(serializers.ModelSerializer):
             "number": instance.user.username,
             "full_name": instance.get_full_name(),
             "first_name": instance.first_name,
-            "last_name": instance.second_name,
+            "last_name": instance.last_name,
             "middle_name": instance.middle_name,
         }
 

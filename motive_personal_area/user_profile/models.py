@@ -9,7 +9,7 @@ class Profile(models.Model):
     middle_name = models.CharField(max_length=50, null=True)
 
     def get_full_name(self):
-        if self.middle_name in None:
+        if self.middle_name is None:
             return "{0} {1}".format(self.first_name, self.last_name)
         return "{0} {1} {2}".format(self.first_name, self.middle_name, self.last_name)
 
