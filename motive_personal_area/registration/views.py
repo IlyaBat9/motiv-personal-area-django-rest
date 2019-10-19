@@ -34,7 +34,7 @@ def login(request):
 def change_password(request):
     serializer = ChangePasswordSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
-    user = User.objects.get(user=request.user)
+    user = request.user
     user.set_password(serializer.data.get("password"))
     user.save()
     return Response({}, status=200)
