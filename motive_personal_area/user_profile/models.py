@@ -7,7 +7,6 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50, null=True)
-    phone = models.IntegerField(null=False)
 
     def get_full_name(self):
         if self.middle_name in None:
