@@ -23,5 +23,6 @@ def login(request):
         return Response({"detail": "There is user that incorrect created"}, status=500)
 
     return Response(
-        {"detail": "Login successful", "token": token.key}
+        {"detail": "Login successful", "token": token.key},
+        status=200
     )
