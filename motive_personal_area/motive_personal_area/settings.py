@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "registration",
     'user_profile',
     'balance_info',
+    'tariff',
 ]
 
 MIDDLEWARE = [
