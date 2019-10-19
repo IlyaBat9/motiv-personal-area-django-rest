@@ -3,7 +3,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
-from .serializer import LoginSerializer, ChangePasswordSerializer
+from .serializer import LoginSerializer, ChangePasswordSerializer, LoginOTPSerializer
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 
@@ -32,10 +32,10 @@ def login(request):
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def login_otp(request):
-    serializer = LoginSerializer(data=request.data)
+    serializer = LoginOTPSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     if serializer.data.get("otp") != "0000":
-        return Response({"detail": "Incorrect token"}, status=400)
+        return Response({"detail": "Incorrect otp"}, status=400)
     user = User.objects.get(username=serializer.data.get("login"))
 
     try:

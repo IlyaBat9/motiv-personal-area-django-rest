@@ -41,7 +41,7 @@ Authorizations | token <user_token>
 
 # Если отп не валиден. 
 {
-    "detail": "Incorrect token"
+    "detail": "Incorrect otp"
 }
 # status 400
 ````
