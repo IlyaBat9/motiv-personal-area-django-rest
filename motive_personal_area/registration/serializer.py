@@ -21,3 +21,14 @@ class ChangePasswordSerializer(serializers.Serializer):
 
     def update(self, instance, validated_data):
         pass
+
+
+class LoginOTPSerializer(serializers.Serializer):
+    login = serializers.CharField(max_length=50)
+    otp = serializers.CharField(max_length=5)
+
+    def create(self, validated_data):
+        pass
+
+    def update(self, instance, validated_data):
+        pass
