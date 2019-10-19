@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
+from .serializer import BalanceSerializer
+from .models import Balance
 
-# Create your views here.
+
+class GetBalance(generics.RetrieveAPIView):
+    serializer_class = BalanceSerializer
+    permission_classes = (IsAuthenticated,)
+    queryset = Balance.objects.all
+
+    def get_object(self):
+        return Balance.objects.get(user=self.request.user)
