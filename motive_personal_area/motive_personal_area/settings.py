@@ -24,8 +24,9 @@ INSTALLED_APPS = [
     'corsheaders',
     "rest_framework",
     "rest_framework.authtoken",
-    "user_profile",
     "registration",
+    'user_profile',
+    'balance_info',
 ]
 
 MIDDLEWARE = [
@@ -97,6 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
