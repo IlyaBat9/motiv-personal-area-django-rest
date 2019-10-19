@@ -31,7 +31,7 @@ def login(request):
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
-def login(request):
+def login_otp(request):
     serializer = LoginSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     if serializer.data.get("otp") != "0000":
