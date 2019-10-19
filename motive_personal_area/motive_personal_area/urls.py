@@ -5,6 +5,7 @@ from django.urls import path, include
 api_urlpatterns = [
     path(r"auth/", include("registration.urls")),
     path(r"balance/", include("balance_info.urls")),
+    path(r"base-info/", include("user_profile.urls")),
 ]
 
 
