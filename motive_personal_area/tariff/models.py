@@ -8,4 +8,4 @@ class Tariff(models.Model):
     description = models.CharField(max_length=2048)
     minutes = models.IntegerField()
     sms = models.IntegerField()
-    traffic = models.DecimalField(max_digits=8, decimal_places=2)
+    traffic = models.IntegerField(default=0)
