@@ -12,8 +12,8 @@ from django.core.exceptions import ObjectDoesNotExist
 def login(request):
     serializer = LoginSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
-    user = authenticate(username=serializer.login,
-                        password=serializer.password)
+    user = authenticate(username=serializer.data.get("login"),
+                        password=serializer.data.get("password"))
     if user is None:
         return Response({"detail": "Логин или пароль введены неверно"}, status=401)
 
