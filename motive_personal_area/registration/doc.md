@@ -1,6 +1,7 @@
 # Логин POST domen.com/api/auth/login/
 
-Вид заголовка для доступа ко всем остальным частям сайта, гд
+Вид заголовка для доступа ко всем остальным частям сайта, где нужна аутентификация
+Authorizations | token <user_token>
 
 
 ````python
@@ -20,6 +21,31 @@
 # Если не 200 -> что-то не так
 
 ````
+
+# OTP логин POST domen.com/api/auth/otp-login/
+
+````python
+# POST
+{
+    "login": "str",
+    "otp": "str (0000)"
+}
+
+# Response
+{
+    "detail": "str",
+    "token": "str"
+}
+# status 200
+
+
+# Если отп не валиден. 
+{
+    "detail": "Incorrect token"
+}
+# status 400
+````
+
 
 # Change password POST domen.com/api/auth/change-password/
 

@@ -30,6 +30,26 @@ def login(request):
 
 
 @api_view(["POST"])
+@permission_classes([AllowAny])
+def login(request):
+    serializer = LoginSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    if serializer.data.get("otp") != "0000":
+        return Response({"detail": "Incorrect token"}, status=400)
+    user = User.objects.get(username=serializer.data.get("login"))
+
+    try:
+        token = Token.objects.get(user=user)
+    except ObjectDoesNotExist:
+        return Response({"detail": "There is user that incorrect created"}, status=500)
+
+    return Response(
+        {"detail": "Login successful", "token": token.key},
+        status=200
+    )
+
+
+@api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def change_password(request):
     serializer = ChangePasswordSerializer(data=request.data)
