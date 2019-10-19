@@ -1,4 +1,4 @@
-#Логин POST domen.com/api/auth/login/
+# Логин POST domen.com/api/auth/login/
 
 Вид заголовка для доступа ко всем остальным частям сайта, гд
 
@@ -20,3 +20,20 @@
 # Если не 200 -> что-то не так
 
 ````
+
+# Change password POST domen.com/api/auth/change-password/
+
+```python
+{
+# POST
+{
+    "otp": "str (0000)",
+    "password" "str (new password)",
+}
+
+# Response 200
+{}
+
+# Во всех остальных случаях не 200
+```
+
