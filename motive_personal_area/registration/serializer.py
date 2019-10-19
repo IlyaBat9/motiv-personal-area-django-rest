@@ -1,7 +1,4 @@
 from rest_framework import serializers
-from django.utils import timezone
-from re import match
-from django.contrib.auth import get_user_model
 
 
 class LoginSerializer(serializers.Serializer):
