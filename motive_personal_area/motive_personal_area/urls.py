@@ -6,7 +6,7 @@ api_urlpatterns = [
     path(r"auth/", include("registration.urls")),
     path(r"balance/", include("balance_info.urls")),
     path(r"tariffs/", include("tariff.urls")),
-    path(r"base-info/", include("user_profile.urls")),
+    path(r"info/", include("user_profile.urls")),
 ]
 
 
