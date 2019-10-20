@@ -7,4 +7,4 @@ class Balance(models.Model):
     minutes = models.TimeField(null=True)
     sms = models.IntegerField(null=True)
     traffic = models.IntegerField(null=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
